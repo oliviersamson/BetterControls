@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BetterControls", "BetterControls.csproj", "{43D09342-2F5F-4660-ADEF-8AA89A058CFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{43D09342-2F5F-4660-ADEF-8AA89A058CFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43D09342-2F5F-4660-ADEF-8AA89A058CFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43D09342-2F5F-4660-ADEF-8AA89A058CFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43D09342-2F5F-4660-ADEF-8AA89A058CFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {787B1455-E314-491A-8046-ECA854930E9A}
+	EndGlobalSection
+EndGlobal
