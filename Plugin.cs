@@ -8,7 +8,7 @@ namespace BetterControls
     {
         public const string PLUGIN_GUID = "muck.mrboxxy.bettercontrols";
         public const string PLUGIN_NAME = "BetterControls";
-        public const string PLUGIN_VERSION = "0.3.0";
+        public const string PLUGIN_VERSION = "1.0.0";
     }
 
     [BepInPlugin(Globals.PLUGIN_GUID, Globals.PLUGIN_NAME, Globals.PLUGIN_VERSION)]
@@ -29,9 +29,13 @@ namespace BetterControls
             ControlsConfig.Config.SaveOnConfigSet = true;
 
             harmony.PatchAll(typeof(ControlsConfig));
+            Log.LogInfo("Patched MuckSettings.Settings.Controls()");
 
             harmony.PatchAll(typeof(PingControllerPatch.PrefixesAndPostfixes));
             Log.LogInfo("Patched PingController.Update()");
+
+            harmony.PatchAll(typeof(ChatBoxPatch.PrefixesAndPostfixes));
+            Log.LogInfo("Patched ChatBox.UserInput()");
         }
     }
 }

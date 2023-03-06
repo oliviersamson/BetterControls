@@ -11,5 +11,6 @@ namespace BetterControls
     public static class NewInputs
     {
         public static ConfigEntry<KeyCode> Ping = ControlsConfig.Config.Bind<KeyCode>("Ping", "ping", KeyCode.Mouse2, "Player ping.");
+        public static ConfigEntry<KeyCode> Chat = ControlsConfig.Config.Bind<KeyCode>("Open Chat", "chat", KeyCode.Return, "Open chat.");
     }
 }

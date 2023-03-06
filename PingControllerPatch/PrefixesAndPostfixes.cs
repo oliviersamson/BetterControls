@@ -9,11 +9,11 @@ using UnityEngine.XR;
 
 namespace BetterControls.PingControllerPatch
 {
-    class PrefixesAndPostfixes
+    public class PrefixesAndPostfixes
     {
         [HarmonyPatch(typeof(PingController), "Update")]
         [HarmonyPrefix]
-        static bool UpdatePrefix(PingController __instance)
+        public static bool UpdatePrefix(PingController __instance)
         {
             if (Input.GetKeyDown(NewInputs.Ping.Value))
             {

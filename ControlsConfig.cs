@@ -20,8 +20,7 @@ namespace BetterControls
         static void Controls(MuckSettings.Settings.Page page)
         {
             page.AddControlSetting("Ping", NewInputs.Ping);
+            page.AddControlSetting("Open Chat", NewInputs.Chat);
         }
-
-
     }
 }
