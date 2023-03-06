@@ -7,8 +7,8 @@
 - Shift+DoubleClick to transfer only a single item from the stack at a time
 - Shift+LeftClick to transfer half of stack
 - Add a new control to quickly switch back to the last used item, Q by default
-- Add the player ping as a re-bindable control
+- Add the player ping as a re-bindable control (done)
 - Add hotbar access as re-bindable controls
-- Add new control to open/close chat
-- Escape to go back in menu from lobby
+- Add new control to open chat (done)
+- Escape to go back in menu from lobby (done)
 - Restrict having more than one bind for the same key when it doesn't make sense

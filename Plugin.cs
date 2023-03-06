@@ -36,6 +36,9 @@ namespace BetterControls
 
             harmony.PatchAll(typeof(ChatBoxPatch.PrefixesAndPostfixes));
             Log.LogInfo("Patched ChatBox.UserInput()");
+
+            harmony.PatchAll(typeof(LobbyVisualPatch.PrefixesAndPostfixes));
+            Log.LogInfo("Patched LobbyVisual.Awake()");
         }
     }
 }
