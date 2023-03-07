@@ -43,6 +43,9 @@ namespace BetterControls
             harmony.PatchAll(typeof(HotbarPatch.UpdateTranspiler));
             harmony.PatchAll(typeof(HotbarPatch.PrefixesAndPostfixes));
             Log.LogInfo("Patched Hotbar.Update()");
+
+            harmony.PatchAll(typeof(InventoryCellPatch.PrefixesAndPostfixes));
+            Log.LogInfo("Patched InventoryCell.OnPointerDown()");
         }
     }
 }
