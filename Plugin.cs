@@ -39,6 +39,10 @@ namespace BetterControls
 
             harmony.PatchAll(typeof(LobbyVisualPatch.PrefixesAndPostfixes));
             Log.LogInfo("Patched LobbyVisual.Awake()");
+
+            harmony.PatchAll(typeof(HotbarPatch.UpdateTranspiler));
+            harmony.PatchAll(typeof(HotbarPatch.PrefixesAndPostfixes));
+            Log.LogInfo("Patched Hotbar.Update()");
         }
     }
 }

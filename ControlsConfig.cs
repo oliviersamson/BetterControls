@@ -21,6 +21,12 @@ namespace BetterControls
         {
             page.AddControlSetting("Ping", NewInputs.Ping);
             page.AddControlSetting("Open Chat", NewInputs.Chat);
+            page.AddControlSetting("Last Selected Hotbar Cell", NewInputs.Hotbar.LastSelected);
+
+            for (int i = 0; i < NewInputs.Hotbar.Cells.Length; i++)
+            {
+                page.AddControlSetting($"Hotbar Cell {i + 1}", NewInputs.Hotbar.Cells[i]);
+            }
         }
     }
 }
