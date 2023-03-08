@@ -73,6 +73,7 @@ namespace BetterControls.InventoryCellPatch
                     float time = 1f;
                     inventoryCell.Invoke("GetReady", time);
                     ClientSend.ChestUpdate(OtherInput.Instance.currentChest.id, inventoryCell.cellId, itemId, num3);
+                    AchievementManager.Instance.PickupItem(inventoryCell.currentItem);
 
                     break;
 
@@ -101,9 +102,39 @@ namespace BetterControls.InventoryCellPatch
 
                         case OtherInput.CraftingState.Cauldron:
 
+                            inventoryCell.currentItem = inventoryItem;
+
+                            ((CauldronUI)OtherInput.Instance.cauldron).AddItemToCauldron(inventoryItem2);
+
+                            if (inventoryCell.currentItem != null)
+                            {
+                                inventoryCell.currentItem.amount += inventoryItem2.amount;
+                            }
+                            else if (inventoryItem2.amount != 0)
+                            {
+                                inventoryCell.currentItem = inventoryItem2;
+                            }
+
+                            inventoryCell.UpdateCell();
+
                             break;
 
                         case OtherInput.CraftingState.Furnace:
+
+                            inventoryCell.currentItem = inventoryItem;
+
+                            ((FurnaceUI)OtherInput.Instance.furnace).AddItemToFurnace(inventoryItem2);
+
+                            if (inventoryCell.currentItem != null)
+                            {
+                                inventoryCell.currentItem.amount += inventoryItem2.amount;
+                            }
+                            else if (inventoryItem2.amount != 0)
+                            {
+                                inventoryCell.currentItem = inventoryItem2;
+                            }
+
+                            inventoryCell.UpdateCell();
 
                             break;
                     }
