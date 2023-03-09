@@ -10,7 +10,7 @@ It is also now possible to transfer only half of a stack instantly with Shift+Ri
 
 This mod is dependant on Terrain's SettingsApi mod. 
 
-If you're like me and are a bit annoyed at how his new settings menu feel like, get my BetterSettingsApi mod for a feel closer to the original game.
+If you're like me and are a bit annoyed at how his new settings menu feel like, get my [BetterSettingsApi](https://muck.thunderstore.io/package/MrBoxxy/BetterSettingsApi/ "Thunderstore") mod for a feel closer to the original game.
 
 To report a problem with this mod or for a feature request, please raise an issue on [GitHub](https://github.com/oliviersamson/Muck-BetterControls/issues "GitHub")
 
