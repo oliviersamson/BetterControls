@@ -48,8 +48,6 @@ namespace UnityEngine
 
             if (amountToPlace > 0 && emptyInventoryCell != null)
             {
-                Plugin.Log.LogDebug("Hello");
-                Plugin.Log.LogDebug(emptyInventoryCell.cellId);
                 cellsAndAmounts.Add(new KeyValuePair<int, int>(emptyInventoryCell.cellId, amountToPlace));
             }
 
@@ -63,11 +61,7 @@ namespace UnityEngine
                 return;
             }
 
-            Plugin.Log.LogDebug("Hello there");
-
             List<KeyValuePair<int, int>> cellsAndAmounts = chestUI.GetAvailableCells(item);
-
-            Plugin.Log.LogDebug("General kenobi");
 
             foreach (KeyValuePair<int, int> cellAndAmount in cellsAndAmounts)
             {
