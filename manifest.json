@@ -1,0 +1,7 @@
+{
+  "name": "BetterControls",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/oliviersamson/Muck-BetterControls",
+  "description": "Mod that aims to expand the available controls and customize them, all for a smoother interaction with the game.",
+  "dependencies": [ "BepInEx-BepInExPack_Muck-5.4.1101", "Terrain-SettingsApi-1.1.1" ]
+}

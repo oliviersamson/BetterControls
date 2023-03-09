@@ -12,6 +12,7 @@ namespace BetterControls
     }
 
     [BepInPlugin(Globals.PLUGIN_GUID, Globals.PLUGIN_NAME, Globals.PLUGIN_VERSION)]
+    [BepInDependency("Terrain.MuckSettings")]
     public class Plugin : BaseUnityPlugin
     {
         public static ManualLogSource Log;
@@ -46,6 +47,7 @@ namespace BetterControls
 
             harmony.PatchAll(typeof(InventoryCellPatch.PrefixesAndPostfixes));
             Log.LogInfo("Patched InventoryCell.OnPointerDown()");
+            Log.LogInfo("Patched InventoryCell.ShiftClick()");
         }
     }
 }

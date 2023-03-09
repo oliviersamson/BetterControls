@@ -3,10 +3,13 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>BetterControls</AssemblyName>
-    <Description>My first plugin</Description>
+    <Description>Mod that aims to expand the available controls and customize them, all for a smoother interaction with the game.</Description>
     <Version>1.0.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
+    <Authors>Olivier Samson</Authors>
+    <PackageId>muck.mrboxxy.bettercontrols</PackageId>
+    <Title>BetterControls</Title>
   </PropertyGroup>
 
   <ItemGroup>
