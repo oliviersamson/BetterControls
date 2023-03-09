@@ -9,6 +9,8 @@ namespace UnityEngine
         {
             List<KeyValuePair<int, int>> cellsAndAmounts = new List<KeyValuePair<int, int>>();
 
+            InventoryCell emptyInventoryCell = null;
+
             int amountToPlace = item.amount;
             foreach (InventoryCell cell in furnaceUI.synchedCells)
             {
@@ -16,28 +18,32 @@ namespace UnityEngine
                 {
                     if (cell.currentItem == null)
                     {
-                        cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, amountToPlace));
-                        return cellsAndAmounts;
-                    }
-                    else
-                    {
-                        if (cell.currentItem.id == item.id && cell.currentItem.amount != cell.currentItem.max)
+                        if (emptyInventoryCell == null)
                         {
-                            int availableSpace = cell.currentItem.max - cell.currentItem.amount;
-                            if (availableSpace >= amountToPlace)
-                            {
-                                cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, amountToPlace));
-                                return cellsAndAmounts;
-                            }
-                            else
-                            {
-                                cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, availableSpace));
+                            emptyInventoryCell = cell;
+                        }
+                    }
+                    else if (cell.currentItem.id == item.id && cell.currentItem.amount != cell.currentItem.max)
+                    {
+                        int availableSpace = cell.currentItem.max - cell.currentItem.amount;
+                        if (availableSpace >= amountToPlace)
+                        {
+                            cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, amountToPlace));
+                            return cellsAndAmounts;
+                        }
+                        else
+                        {
+                            cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, availableSpace));
 
-                                amountToPlace -= availableSpace;
-                            }
+                            amountToPlace -= availableSpace;
                         }
                     }
                 }
+            }
+
+            if (amountToPlace > 0 && emptyInventoryCell != null)
+            {
+                cellsAndAmounts.Add(new KeyValuePair<int, int>(emptyInventoryCell.cellId, amountToPlace));
             }
 
             return cellsAndAmounts;

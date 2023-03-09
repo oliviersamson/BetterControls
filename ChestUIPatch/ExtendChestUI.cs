@@ -1,4 +1,5 @@
-﻿using BetterControls.InventoryCellPatch;
+﻿using BetterControls;
+using BetterControls.InventoryCellPatch;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace UnityEngine
         {
             List<KeyValuePair<int,int>> cellsAndAmounts = new List<KeyValuePair<int,int>>();
 
+            InventoryCell emptyInventoryCell = null;
+
             int amountToPlace = item.amount;
             foreach (InventoryCell cell in chestUI.cells)
             {
@@ -20,28 +23,34 @@ namespace UnityEngine
                 {
                     if (cell.currentItem == null)
                     {
-                        cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, amountToPlace));
-                        return cellsAndAmounts;
-                    }
-                    else
-                    {
-                        if (cell.currentItem.id == item.id && cell.currentItem.amount != cell.currentItem.max)
+                        if (emptyInventoryCell == null)
                         {
-                            int availableSpace = cell.currentItem.max - cell.currentItem.amount;
-                            if (availableSpace >= amountToPlace)
-                            {
-                                cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, amountToPlace));
-                                return cellsAndAmounts;
-                            }
-                            else
-                            {
-                                cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, availableSpace));
-                                
-                                amountToPlace -= availableSpace;
-                            } 
+                            emptyInventoryCell = cell;
                         }
                     }
+                    else if (cell.currentItem.id == item.id && cell.currentItem.amount != cell.currentItem.max)
+                    {
+                        int availableSpace = cell.currentItem.max - cell.currentItem.amount;
+                        if (availableSpace >= amountToPlace)
+                        {
+                            cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, amountToPlace));
+                            return cellsAndAmounts;
+                        }
+                        else
+                        {
+                            cellsAndAmounts.Add(new KeyValuePair<int, int>(cell.cellId, availableSpace));
+                                
+                            amountToPlace -= availableSpace;
+                        } 
+                    }
                 }
+            }
+
+            if (amountToPlace > 0 && emptyInventoryCell != null)
+            {
+                Plugin.Log.LogDebug("Hello");
+                Plugin.Log.LogDebug(emptyInventoryCell.cellId);
+                cellsAndAmounts.Add(new KeyValuePair<int, int>(emptyInventoryCell.cellId, amountToPlace));
             }
 
             return cellsAndAmounts;
@@ -54,7 +63,11 @@ namespace UnityEngine
                 return;
             }
 
+            Plugin.Log.LogDebug("Hello there");
+
             List<KeyValuePair<int, int>> cellsAndAmounts = chestUI.GetAvailableCells(item);
+
+            Plugin.Log.LogDebug("General kenobi");
 
             foreach (KeyValuePair<int, int> cellAndAmount in cellsAndAmounts)
             {
