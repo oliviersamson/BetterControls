@@ -18,6 +18,7 @@ To report a problem with this mod or for a feature request, please raise an issu
 This mod adds a few existing controls as rebindable controls:
 - Player ping
 - Hotbar access (1 through 7)
+- Chat open
 
 This mod also adds a new control
 - Quick switch of hotbar selection (default Q)
