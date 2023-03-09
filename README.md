@@ -5,7 +5,7 @@
 - Allow Shift+Click to put items into chests, cauldrons and furnaces, not only to take them
 - DoubleClick to take only a single item from the stack at a time, double clicking the same item type will take one more item of this type
 - Shift+DoubleClick to transfer only a single item from the stack at a time
-- Shift+LeftClick to transfer half of stack (done)
+- Shift+RightClick to transfer half of stack (done)
 - Add a new control to quickly switch back to the last used item, Q by default (done)
 - Add the player ping as a re-bindable control (done)
 - Add hotbar access as re-bindable controls (done)
