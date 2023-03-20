@@ -35,6 +35,9 @@ namespace BetterControls
                         rotateText.SetText($"Press " + keyCode.ToString() + " to rotate build");
                     }
                 });
+
+            page.AddControlSetting("Drop Item", NewInputs.Drop);
+
             page.AddControlSetting("Last Selected Hotbar Cell", NewInputs.Hotbar.LastSelected);
 
             for (int i = 0; i < NewInputs.Hotbar.Cells.Length; i++)

@@ -24,10 +24,6 @@ namespace BetterControls.PlayerInputPatch
                     return NewInputs.Rotate.Value;
                 }).WithLabels(codeMatcher.Labels));
 
-            Plugin.Log.LogDebug(codeMatcher.InstructionAt(-1));
-            Plugin.Log.LogDebug(codeMatcher.InstructionAt(0));
-            Plugin.Log.LogDebug(codeMatcher.InstructionAt(1));
-
             return codeMatcher.InstructionEnumeration();
         }
     }

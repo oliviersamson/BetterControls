@@ -50,6 +50,7 @@ namespace BetterControls
             Log.LogInfo("Patched InventoryCell.ShiftClick()");
 
             harmony.PatchAll(typeof(PlayerInputPatch.MyInputTranspiler));
+            harmony.PatchAll(typeof(PlayerInputPatch.PrefixesAndPostfixes));
             Log.LogInfo("Patched PlayerInput.MyInput()");
 
             harmony.PatchAll(typeof(BuildManagerPatch.PrefixesAndPostfixes));
