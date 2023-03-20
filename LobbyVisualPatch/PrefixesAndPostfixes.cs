@@ -13,7 +13,7 @@ namespace BetterControls.LobbyVisualPatch
 {
     public class PrefixesAndPostfixes
     {
-        [HarmonyPatch(typeof(LobbyVisuals), "Awake")]
+        [HarmonyPatch(typeof(LobbyVisuals), "OpenLobby")]
         [HarmonyPostfix]
         static void AwakePostfix()
         {
@@ -21,6 +21,13 @@ namespace BetterControls.LobbyVisualPatch
             MenuUI menuUi = LobbyVisuals.Instance.menuUi;
 
             escapeUI.backBtn = menuUi.lobbyUi.transform.Find("LobbyDetails").Find("BackBtn").GetComponent<Button>();
+        }
+
+        [HarmonyPatch(typeof(LobbyVisuals), "CloseLobby")]
+        [HarmonyPostfix]
+        static void CloseLobbyPostfix()
+        {
+            GameObject.Destroy(LobbyVisuals.Instance.gameObject.GetComponent<EscapeUI>());
         }
     }
 }

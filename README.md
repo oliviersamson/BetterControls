@@ -20,6 +20,9 @@ This mod adds a few existing controls as rebindable controls:
 - Hotbar access (default 1 through 7)
 - Chat open (dafault Return/Enter)
 
+This mods make the lobby menu more consistents with the other menus
+- You can now exit a lobby with Escape as with any other menu
+
 This mod also adds a new control
 - Quick switch of hotbar selection (default Q)
 
