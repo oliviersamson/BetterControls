@@ -48,6 +48,12 @@ namespace BetterControls
             harmony.PatchAll(typeof(InventoryCellPatch.PrefixesAndPostfixes));
             Log.LogInfo("Patched InventoryCell.OnPointerDown()");
             Log.LogInfo("Patched InventoryCell.ShiftClick()");
+
+            harmony.PatchAll(typeof(PlayerInputPatch.MyInputTranspiler));
+            Log.LogInfo("Patched PlayerInput.MyInput()");
+
+            harmony.PatchAll(typeof(BuildManagerPatch.PrefixesAndPostfixes));
+            Log.LogInfo("Patched BuildManager.Awake()");
         }
     }
 }

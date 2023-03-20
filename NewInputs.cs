@@ -7,7 +7,8 @@ namespace BetterControls
     {
         public static ConfigEntry<KeyCode> Ping = ControlsConfig.Config.Bind<KeyCode>("Ping", "ping", KeyCode.Mouse2, "Player ping.");
         public static ConfigEntry<KeyCode> Chat = ControlsConfig.Config.Bind<KeyCode>("Chat", "openChat", KeyCode.Return, "Open chat.");
-        
+        public static ConfigEntry<KeyCode> Rotate = ControlsConfig.Config.Bind<KeyCode>("Build", "rotateBuild", KeyCode.R, "Rotate build.");
+
         public static class Hotbar
         {
             public static ConfigEntry<KeyCode> LastSelected = ControlsConfig.Config.Bind<KeyCode>("Hotbar", "lastSelected", KeyCode.Q, "Last selected hotbar cell.");

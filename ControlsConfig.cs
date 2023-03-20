@@ -2,6 +2,9 @@
 using BepInEx;
 using System.IO;
 using HarmonyLib;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using TMPro;
 
 namespace BetterControls
 {
@@ -15,6 +18,23 @@ namespace BetterControls
         {
             page.AddControlSetting("Ping", NewInputs.Ping);
             page.AddControlSetting("Open Chat", NewInputs.Chat);
+
+            if (NewInputs.Rotate.DefaultValue == null)
+            {
+                NewInputs.Rotate.BoxedValue = KeyCode.R;
+            }
+            
+            page.AddControlSetting("Rotate Build", (KeyCode)NewInputs.Rotate.BoxedValue, 
+                (keyCode) => {
+
+                    NewInputs.Rotate.BoxedValue = keyCode;
+
+                    if (SceneManager.GetActiveScene().name == "GameAfterLobby")
+                    {
+                        TextMeshProUGUI rotateText = BuildManager.Instance.rotateText.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>();
+                        rotateText.SetText($"Press " + keyCode.ToString() + " to rotate build");
+                    }
+                });
             page.AddControlSetting("Last Selected Hotbar Cell", NewInputs.Hotbar.LastSelected);
 
             for (int i = 0; i < NewInputs.Hotbar.Cells.Length; i++)
