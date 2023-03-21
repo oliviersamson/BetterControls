@@ -8,7 +8,7 @@ namespace BetterControls
     {
         public const string PLUGIN_GUID = "muck.mrboxxy.bettercontrols";
         public const string PLUGIN_NAME = "BetterControls";
-        public const string PLUGIN_VERSION = "1.0.0";
+        public const string PLUGIN_VERSION = "1.1.0";
     }
 
     [BepInPlugin(Globals.PLUGIN_GUID, Globals.PLUGIN_NAME, Globals.PLUGIN_VERSION)]
