@@ -4,7 +4,7 @@
     <TargetFramework>net472</TargetFramework>
     <AssemblyName>BetterControls</AssemblyName>
     <Description>Mod that aims to expand the available controls and customize them, all for a smoother interaction with the game.</Description>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <Authors>Olivier Samson</Authors>
