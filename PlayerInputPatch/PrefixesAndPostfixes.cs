@@ -7,8 +7,16 @@ namespace BetterControls.PlayerInputPatch
     {
         [HarmonyPatch(typeof(PlayerInput), "MyInput")]
         [HarmonyPrefix]
-        public static void MyInputPrefix()
+        public static bool MyInputPrefix(PlayerInput __instance)
         {
+            if (OtherInput.Instance.OtherUiActive() && !Map.Instance.active)
+            {
+                AccessTools.Method(typeof(PlayerInput), "StopInput").Invoke(__instance, null);
+
+                // Skip original method
+                return false;
+            }
+
             if (Input.GetKeyDown(NewInputs.Drop.Value))
             {
                 if (InventoryUI.Instance.gameObject.activeInHierarchy)
@@ -25,6 +33,8 @@ namespace BetterControls.PlayerInputPatch
                     Hotbar.Instance.UseItem(Hotbar.Instance.currentItem.amount);
                 }
             }
+
+            return true;
         }
     }
 }
